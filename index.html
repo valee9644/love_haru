@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta de Amor para Haru</title>
+    <style>
+        body {
+            background-color: #f5f5dc; /* Fondo beige */
+            font-family: 'Press Start 2P', cursive;
+            text-align: center;
+            padding-top: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 40px;
+            color: #4CAF50; /* Verde estilo Minecraft */
+            text-shadow: 3px 3px #2E7D32;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 20px;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 3px 3px #2E7D32;
+        }
+        button:hover {
+            background-color: #388E3C;
+        }
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 24px;
+            animation: float 2s linear infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            100% { transform: translateY(-100px) scale(1.5); opacity: 0; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>I LoVE HARU</h1>
+    <button onclick="createHearts()">💚 Enviar Amor 💚</button>
+    <script>
+        function createHearts() {
+            for (let i = 0; i < 10; i++) {
+                let heart = document.createElement("div");
+                heart.innerHTML = "❤️";
+                heart.classList.add("heart");
+                document.body.appendChild(heart);
+                
+                let x = Math.random() * window.innerWidth;
+                let y = window.innerHeight;
+                heart.style.left = `${x}px`;
+                heart.style.top = `${y}px`;
+                
+                setTimeout(() => { heart.remove(); }, 2000);
+            }
+        }
+    </script>
+</body>
+</html>
